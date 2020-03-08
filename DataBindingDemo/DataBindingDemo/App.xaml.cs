@@ -10,6 +10,7 @@ namespace DataBindingDemo
         {
             InitializeComponent();
 
+            //Test Changes
             MainPage = new Tutorial.RegularDataBindingDemo();
 
         }
