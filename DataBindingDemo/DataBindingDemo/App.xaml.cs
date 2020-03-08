@@ -11,6 +11,7 @@ namespace DataBindingDemo
             InitializeComponent();
 
             MainPage = new Tutorial.RegularDataBindingDemo();
+
         }
 
         protected override void OnStart()
