@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:DataBindingDemo.Model"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Pages.StaticResourceBindingView">
+
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <models:Student x:Key="sampleStudent" FirstName="Steve" LastName="Gates" DateofBirth="10/3/1972" PhoneNo="01123232323" />
+            <models:Student x:Key="sampleStudent2" FirstName="Israt" LastName="Nusrat" DateofBirth="01/04/1995" PhoneNo="01012325469" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+
+    <Grid
+        x:DataType="models:Student"
+        Padding="10"
+        Margin="10"
+        >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Student ID">
+        </Label>
+
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding StudentId, Source={StaticResource sampleStudent2}}">
+        </Label>
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="First Name">
+        </Label>
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding FirstName, Source={StaticResource sampleStudent2}}">
+        </Label>
+
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Last Name">
+        </Label>
+
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding LastName, Source={StaticResource sampleStudent2}}">
+        </Label>
+
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Date of Birth">
+        </Label>
+
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding DateofBirth, Source={StaticResource sampleStudent2}}">
+        </Label>
+
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Phone No.">
+        </Label>
+
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding PhoneNo, Source={d:StaticResource sampleStudent2}}">
+        </Label>
+
+    </Grid>
+    
+    
+    
+</ContentPage>

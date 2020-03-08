@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Tutorial.RegularDataBindingDemo">
+
+
+
+    <Grid
+        x:Name="gridStudent"
+        Padding="10"
+        Margin="10"
+        >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Student ID">
+        </Label>
+
+
+        <Entry
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding StudentId}">
+        </Entry>
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="First Name">
+        </Label>
+
+
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding FirstName}">
+        </Entry>
+
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Last Name">
+        </Label>
+
+
+        <Entry
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding LastName, Mode=OneWay}">
+        </Entry>
+
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Date of Birth">
+        </Label>
+
+
+        <DatePicker
+            Grid.Row="3"
+            Grid.Column="1"
+            Date="{Binding DateofBirth}">
+        </DatePicker>
+
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Phone No.">
+        </Label>
+
+
+        <Entry
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding PhoneNo}"
+            Keyboard="Telephone">
+        </Entry>
+
+
+        <Button
+            Text="Submit"
+            Clicked="Button_Clicked"
+            Grid.Row="5"
+            Grid.Column="0"
+            />
+
+    </Grid>
+
+</ContentPage>

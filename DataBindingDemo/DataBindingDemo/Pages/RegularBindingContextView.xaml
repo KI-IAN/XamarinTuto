@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:DataBindingDemo.Model"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Pages.RegularBindingContextView"
+             x:DataType="models:Student">
+
+    
+    
+    
+    <Grid
+        Padding="10"
+        Margin="10"
+
+        >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="First Name"
+            VerticalTextAlignment="Center">
+        </Label>
+
+
+        <Entry
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="{Binding FirstName, Mode=OneWay}"
+            >
+        </Entry>
+
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Last Name"
+            VerticalTextAlignment="Center">
+        </Label>
+
+
+        <Entry
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="{Binding LastName, Mode=TwoWay}">
+        </Entry>
+
+
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Date of Birth"
+            VerticalTextAlignment="Center">
+        </Label>
+
+
+        <DatePicker
+            Grid.Row="3"
+            Grid.Column="1"
+            Date="{Binding DateofBirth}">
+        </DatePicker>
+
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Phone No."
+            VerticalTextAlignment="Center">
+        </Label>
+
+
+        <Entry
+            Grid.Row="4"
+            Grid.Column="1"
+            Text="{Binding PhoneNo}">
+        </Entry>
+
+
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="Age"
+            VerticalTextAlignment="Center">
+        </Label>
+
+
+        <Entry
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="{Binding Age, Mode=OneWay}">
+        </Entry>
+
+
+        <Button 
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Text="Save"
+            Clicked="Button_Clicked"
+            />
+
+    </Grid>
+
+
+
+
+</ContentPage>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Pages.ViewToViewBindingView">
+
+
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Label 
+            Grid.Row="0"
+            Grid.Column="{Binding Value, Source={x:Reference stepperColPos}}"
+            Text="View2View Demo"
+            FontSize="{Binding Value, Source={x:Reference sliderTest}}"
+            
+            />
+
+        <Slider
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            MaximumTrackColor="Yellow"
+            MinimumTrackColor="Green"
+            x:Name="sliderTest"
+            Maximum="100"
+            Minimum="1"
+            Value="{Binding Value, Source={x:Reference stepperTest}}"
+            
+            />
+
+
+        <Stepper 
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="stepperTest"
+            Value="1"
+            Maximum="150"
+            Minimum="5"
+            Increment="10"
+            FlowDirection="RightToLeft"
+            />
+
+        <Stepper 
+            Grid.Row="2"
+            Grid.Column="1"
+            x:Name="stepperColPos"
+            Value="0"
+            Maximum="2"
+            Minimum="0"
+            Increment="1"
+            />
+
+
+    </Grid>
+    
+    
+    
+    
+</ContentPage>

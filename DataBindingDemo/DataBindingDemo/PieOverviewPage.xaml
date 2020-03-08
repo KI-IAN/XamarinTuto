@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:DataBindingDemo.Model"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.PieOverviewPage"
+             BackgroundImageSource="patternwide.png"
+             Padding="5">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ListView
+            Grid.Row="0"
+            VerticalOptions="FillAndExpand"
+            x:Name="PiesListView"
+            CachingStrategy="RecycleElement"
+            ItemTapped="PiesListView_ItemTapped"
+            ItemTemplate="{StaticResource PiesListViewTemplate}"
+            
+            >
+
+        </ListView>
+
+        <Button
+            x:Name="AddPieButton"
+            Clicked="AddPieButton_Clicked"
+            Text="Add Pie"
+            Style="{StaticResource RegularButtonStyle}"
+            Grid.Row="1">
+
+        </Button>
+
+        <Button
+            x:Name="DeletePieButton"
+            Clicked="DeletePieButton_Clicked"
+            Text="Delete Pie"
+            Style="{StaticResource RegularButtonStyle}"
+            Grid.Row="2">
+
+        </Button>
+
+
+    </Grid>
+
+
+
+
+
+
+
+
+</ContentPage>
