@@ -12,7 +12,7 @@ namespace DataBindingDemo
             InitializeComponent();
 
             //Test Changes
-            MainPage = new Tutorial.ListViewGenericListItem();
+            MainPage = new Tutorial.ListViewModelDemo();
 
         }
 
