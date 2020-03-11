@@ -8,17 +8,51 @@
 
 
     <ListView
-        x:Name="lvStudent">
+        x:Name="lvStudent"
+        >
 
+        
+        
         <ListView.ItemTemplate>
 
             <DataTemplate>
 
-                <TextCell
-                    Text="{Binding FirstName}"
-                    Detail="{Binding LastName}"
-                    ></TextCell>
-                
+                <ViewCell>
+
+                    <StackLayout
+                        Orientation="Vertical">
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label 
+                            Text="{Binding FirstName}"/>
+
+                            <Label 
+                            Text="{Binding LastName}"/>
+
+
+                        </StackLayout>
+
+
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label 
+                            Text="{Binding Age}"/>
+
+                            <Label 
+                            Text="{Binding StudentId}"/>
+
+
+                        </StackLayout>
+
+
+
+
+                    </StackLayout>
+                    
+                    
+                </ViewCell>
                 
                 
                 

@@ -25,50 +25,21 @@ namespace DataBindingDemo.Tutorial
         private List<Model.Student> GetStudents()
         {
 
-            List<Model.Student> students = new List<Model.Student>()
+            List<Model.Student> students = new List<Model.Student>();
+
+
+            for (int i = 0; i < 100; i++)
             {
-                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#1",
-                    LastName = "L#1",
-                    StudentId = 1,
-                },
-                                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#2",
-                    LastName = "L#2",
-                    StudentId = 2,
-                },
+                students.Add(new Model.Student()
+                {
+                    StudentId = i,
+                    FirstName = $"First Name#{i}",
+                    LastName = $"Last Name#{i}",
+                    Age = i + 23,
+                });
 
-                                                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#3",
-                    LastName = "L#3",
-                    StudentId = 3,
-                },
+            }
 
-                                                                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#4",
-                    LastName = "L#4",
-                    StudentId = 4,
-                },
-
-                                                                                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#5",
-                    LastName = "L#5",
-                    StudentId = 5,
-                },
-
-                                                                                                new Model.Student(){
-                    Age = 23,
-                    FirstName = "F#6",
-                    LastName = "L#6",
-                    StudentId = 6,
-                },
-
-            };
 
 
 
