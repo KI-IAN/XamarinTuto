@@ -8,7 +8,9 @@
 
 
     <Grid
->
+        RowSpacing="5"
+        ColumnSpacing="5"
+        Margin="10">
 
         <Grid.RowDefinitions
             >
@@ -27,7 +29,50 @@
 
 
 
+        <BoxView
+           Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="CornflowerBlue"></BoxView>
 
+        <BoxView
+           Grid.Row="0"
+            Grid.Column="1"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="0"
+            Grid.Column="2"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="1"
+            Grid.Column="0"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="1"
+            Grid.Column="2"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="2"
+            Grid.Column="0"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="2"
+            Grid.Column="1"
+            BackgroundColor="CornflowerBlue"></BoxView>
+
+        <BoxView
+           Grid.Row="2"
+            Grid.Column="2"
+            BackgroundColor="CornflowerBlue"></BoxView>
 
 
 
