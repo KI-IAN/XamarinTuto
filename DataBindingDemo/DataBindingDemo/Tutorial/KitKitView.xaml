@@ -8,9 +8,10 @@
 
 
     <Grid
-        >
+>
 
-        <Grid.RowDefinitions>
+        <Grid.RowDefinitions
+            >
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -27,8 +28,11 @@
 
 
 
+
+
+
         <Label 
-            Text="{Binding Value, Source={x:Reference stpIncrement}}"
+            Text="{Binding Value, StringFormat='({0},{0})', Source={x:Reference stpIncrement}}"
             Grid.Row="{Binding Value, Source= {x:Reference stpIncrement}}"
             Grid.Column="{Binding Value, Source= {x:Reference stpIncrement}}"  
             FontSize="50"
