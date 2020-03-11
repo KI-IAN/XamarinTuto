@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Tutorial.ListViewWithColumnHeader">
+
+    <ListView x:Name="mainFormEntry" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+        <ListView.Header>
+
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text ="ID" FontSize="Default" Grid.Column="0" TextDecorations="Underline" FontAttributes="Bold" />
+                <Label Text ="FirstName" FontSize="Default" Grid.Column="1" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label Text ="Last Name" FontSize="Default" Grid.Column="2" TextDecorations="Underline" FontAttributes="Bold"/>
+                <Label Text ="Age" FontSize="Default" Grid.Column="3" TextDecorations="Underline" FontAttributes="Bold" />
+                
+            </Grid>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding StudentId}" FontSize="Default" HorizontalOptions="FillAndExpand"  Grid.Column="0"></Label>
+                        <Label Text="{Binding FirstName}" FontSize="Default" HorizontalOptions="FillAndExpand" Grid.Column="1"></Label>
+                        <Label Text="{Binding LastName}" FontSize="Default" HorizontalOptions="FillAndExpand"  Grid.Column="2"></Label>
+                        <Label Text="{Binding Age}" FontSize="Default" HorizontalOptions="FillAndExpand"  Grid.Column="3"></Label>
+                        
+                    </Grid>
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+
+
+</ContentPage>
