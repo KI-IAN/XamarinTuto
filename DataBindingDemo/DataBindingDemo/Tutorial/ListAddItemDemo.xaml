@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Tutorial.ListAddItemDemo">
+
+
+    <StackLayout>
+
+
+        <ListView
+        x:Name="lvStudent"
+            HasUnevenRows="True"
+            ItemSelected="lvStudent_ItemSelected"
+            ItemTapped="lvStudent_ItemTapped"
+            >
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <Frame
+                            BackgroundColor="GreenYellow"
+                            CornerRadius="10"
+                            Padding="10"
+                            BorderColor="Gold"
+                            Margin="10">
+
+                            <StackLayout>
+
+                                <Label Text="{Binding FirstName}" FontSize="12"/>
+                                <Label Text="{Binding LastName}" FontSize="2"/>
+                                <Label Text="{Binding Age}"  FontSize="10"/>
+
+                            </StackLayout>
+                            
+                        </Frame>
+                        
+                        
+                    </ViewCell>
+                    
+                    
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            
+            
+            
+        </ListView>
+
+
+        <Button 
+            Text="Add Student"
+            Clicked="Button_Clicked"
+            />
+
+        <Button 
+            Text="Remove Student"
+            Clicked="Remove_Clicked"
+            />
+
+
+    </StackLayout>
+
+    
+    
+    
+    
+    
+</ContentPage>

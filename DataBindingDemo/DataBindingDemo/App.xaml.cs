@@ -12,7 +12,7 @@ namespace DataBindingDemo
             InitializeComponent();
 
             //Test Changes
-            MainPage = new Tutorial.ListViewWithColumnHeader();
+            MainPage = new Tutorial.ListAddItemDemo();
 
         }
 

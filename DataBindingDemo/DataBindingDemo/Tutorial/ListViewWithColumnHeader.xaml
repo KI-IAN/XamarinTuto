@@ -10,7 +10,7 @@
 
     <StackLayout
         Orientation="Vertical">
-        
+                                                                                                    
         
         <!--Tried to simulate Grid Column like sticky header!!!!-->
         <Grid HorizontalOptions="FillAndExpand">
