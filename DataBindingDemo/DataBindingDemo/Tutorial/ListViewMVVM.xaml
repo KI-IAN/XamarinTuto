@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:DataBindingDemo.Model"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.Tutorial.ListViewMVVM"
+             BackgroundColor="Azure"
+             >
+
+    <ContentPage.BindingContext>
+        <model:StudentListViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ListView
+        Margin="10"
+        HasUnevenRows="True"
+        
+        x:Name="lvStudent"
+        SeparatorVisibility="None"
+        SeparatorColor="Transparent"
+        ItemsSource="{Binding StudentList}"
+        >
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+
+                    <Frame
+                       Padding="10"
+                        BackgroundColor="White"
+                        Margin="10"
+                        CornerRadius="5"
+                        >
+
+                        <Grid>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+
+                            </Grid.ColumnDefinitions>
+
+
+
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding FirstName}"
+                                FontSize="Medium"
+                                
+                                />
+
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding LastName}"
+                                FontSize="Medium"
+                                />
+
+
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Text="{Binding Age}"
+                                FontSize="Small"
+                                
+                                />
+
+
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding PhoneNo}"
+                                />
+
+
+
+                            <StackLayout
+                                Orientation="Horizontal"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2">
+
+
+
+
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="StartAndExpand"
+                                    VerticalOptions="Center">
+
+
+                                    <Label 
+                                    Text="{Binding TotalLike}"
+                                    FontSize="24"    
+                                    FontAttributes="Bold"
+                                    TextColor="CornflowerBlue"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                />
+
+                                    <ImageButton 
+                                Source="thumbs_up.png"
+                                HorizontalOptions="StartAndExpand"
+                                WidthRequest="24"
+                                HeightRequest="24"
+                                VerticalOptions="Center"
+                                />
+
+                                </StackLayout>
+
+
+                                <ImageButton 
+                                Margin="0,0,0,0"
+                                Source="delete.png"
+                      
+                                HorizontalOptions="CenterAndExpand"
+                                WidthRequest="24"
+                                HeightRequest="24"
+                                VerticalOptions="Center"
+                                
+                                />
+
+
+                                <StackLayout
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="EndAndExpand">
+
+
+                                    <Label 
+                                    Text="{Binding TotalDislike}"
+                                    FontSize="24"    
+                                    FontAttributes="Bold"
+                                    TextColor="OrangeRed"
+
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                    />
+
+
+                                    <ImageButton 
+                                Margin="0,0,20,0"
+                                Source="thumbs_down.png"
+                                HorizontalOptions="End"
+                                WidthRequest="24"
+                                HeightRequest="24"
+                                VerticalOptions="EndAndExpand"
+                                />
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+
+
+                        </Grid>
+
+
+
+                    </Frame>
+
+
+                </ViewCell>
+
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+
+
+
+
+</ContentPage>
