@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              x:Class="DataBindingDemo.Tutorial.ListViewMVVM"
              BackgroundColor="Azure"
+             x:Name="cpList"
              >
 
     <ContentPage.BindingContext>
@@ -22,10 +23,14 @@
         SeparatorVisibility="None"
         SeparatorColor="Transparent"
         ItemsSource="{Binding StudentList}"
+        
         >
 
+        
+        
         <ListView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate
+                >
 
                 <ViewCell>
 
@@ -116,6 +121,8 @@
                                 WidthRequest="24"
                                 HeightRequest="24"
                                 VerticalOptions="Center"
+                                Command="{Binding Source={x:Reference cpList}, Path=BindingContext.HitLikeCommand}"
+                                CommandParameter="{Binding .}"
                                 />
 
                                 </StackLayout>
@@ -124,12 +131,12 @@
                                 <ImageButton 
                                 Margin="0,0,0,0"
                                 Source="delete.png"
-                      
                                 HorizontalOptions="CenterAndExpand"
                                 WidthRequest="24"
                                 HeightRequest="24"
                                 VerticalOptions="Center"
-                                
+                                Command="{Binding Source={x:Reference cpList}, Path=BindingContext.DeleteItemCommand}"
+                                CommandParameter="{Binding .}"
                                 />
 
 
@@ -143,7 +150,6 @@
                                     FontSize="24"    
                                     FontAttributes="Bold"
                                     TextColor="OrangeRed"
-
                                     HorizontalOptions="End"
                                     VerticalOptions="Center"
                                     />
@@ -156,6 +162,8 @@
                                 WidthRequest="24"
                                 HeightRequest="24"
                                 VerticalOptions="EndAndExpand"
+                                Command="{Binding Source={x:Reference cpList}, Path=BindingContext.HitDislikeCommand}"
+                                CommandParameter="{Binding .}"
                                 />
 
                                 </StackLayout>
