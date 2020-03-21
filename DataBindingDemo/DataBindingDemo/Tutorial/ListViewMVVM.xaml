@@ -138,6 +138,7 @@
                                 Source="thumbs_up.png"
                                 HorizontalOptions="StartAndExpand"
                                 BackgroundColor="{Binding Source={x:Reference frmStudent}, Path=BackgroundColor}"
+                                Aspect="Fill"
                                 WidthRequest="24"
                                 HeightRequest="24"
                                 VerticalOptions="Center"
@@ -160,6 +161,7 @@
                                 Command="{Binding Source={x:Reference cpList}, Path=BindingContext.DeleteItemCommand}"
                                 CommandParameter="{Binding .}"
                                 BackgroundColor="{Binding Source={x:Reference frmStudent}, Path=BackgroundColor}"
+                                Aspect="Fill"
                                 />
 
 
@@ -191,6 +193,7 @@
                                 Command="{Binding Source={x:Reference cpList}, Path=BindingContext.HitDislikeCommand}"
                                 CommandParameter="{Binding .}"
                                 BackgroundColor="{Binding Source={x:Reference frmStudent}, Path=BackgroundColor}"
+                                Aspect="Fill"        
                                 />
 
                                 </StackLayout>
