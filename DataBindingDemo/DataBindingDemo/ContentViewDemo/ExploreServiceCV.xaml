@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.ContentViewDemo.ExploreServiceCV">
+
+
+    <Frame
+        >
+
+        <Grid
+            RowSpacing="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+
+            <Label 
+            Text="Explore our services"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            FontSize="18"
+            FontAttributes="Bold"
+                TextColor="Black"
+            />
+
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0"
+                Spacing="0"
+                
+                >
+
+                <ImageButton 
+                Source="home_services.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="Home"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="-35,0,0,0"
+                    />
+
+
+            </StackLayout>
+
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0"
+                Spacing="0"
+                >
+
+                <ImageButton 
+                Source="mobile_postpaid_services.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                Aspect="Fill"
+                BackgroundColor="Transparent"/>
+
+
+                <Label 
+                    Text="Mobile Postpaid"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="0"
+                Spacing="0"
+                
+                >
+
+                <ImageButton 
+                Source="unifi_air_service.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                    Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="unifi Air"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="0"
+                Spacing="0"
+                
+                >
+
+                <ImageButton 
+                Source="unifi_tv_service.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                    Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="TV"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+
+        </Grid>
+
+
+    </Frame>
+    
+
+
+</ContentView>

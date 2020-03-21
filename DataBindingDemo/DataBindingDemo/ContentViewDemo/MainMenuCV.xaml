@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.ContentViewDemo.MainMenuCV">
+
+
+    <Frame
+        CornerRadius="10"
+        Padding="15"
+        Margin="10,-50,10,10"
+        >
+
+        <Grid
+            RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0"
+                Spacing="3"
+                
+                >
+
+                <ImageButton 
+                Source="unifi_account.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="Account"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0"
+                Spacing="3"
+                >
+
+                <ImageButton 
+                Source="unifi_paybill.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                Aspect="Fill"
+                BackgroundColor="Transparent"/>
+
+
+                <Label 
+                    Text="Pay Bills"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="0"
+                Spacing="3"
+                
+                >
+
+                <ImageButton 
+                Source="unifi_support.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                    Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="Support"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Orientation="Vertical"
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="0"
+                Spacing="3"
+                
+                >
+
+                <ImageButton 
+                Source="unifi_rewards.png"
+                HeightRequest="48"
+                WidthRequest="48"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                                    Aspect="Fill"
+                BackgroundColor="Transparent"
+                />
+
+
+                <Label 
+                    Text="Rewards"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                                        HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    />
+
+
+            </StackLayout>
+
+
+        </Grid>
+
+
+    </Frame>
+
+
+
+</ContentView>

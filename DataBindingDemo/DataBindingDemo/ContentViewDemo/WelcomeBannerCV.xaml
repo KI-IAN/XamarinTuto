@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.ContentViewDemo.WelcomeBannerCV"
+             >
+
+
+    <Grid
+        Padding="0"
+        Margin="0"
+        ColumnSpacing="15">
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="120" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        
+        <!-- Grid Backgroud-->
+
+        <Image 
+            Source="bg_gradient_orange.jpg"
+            Grid.RowSpan="3"
+            Grid.ColumnSpan="3"
+            Aspect="Fill"
+                    
+            
+            />
+
+
+        <Image 
+            Source="circle_bell_icon.png"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            HorizontalOptions="End"
+            HeightRequest="36"
+            WidthRequest="36"
+            />
+
+
+
+        <StackLayout
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2">
+
+            <Label 
+            Text="Hello User"
+            TextColor="White"
+            FontSize="Large"
+            />
+
+            <Label 
+            Text="What would you like to do today?"
+            TextColor="White"
+            FontSize="Medium"
+            />
+
+
+        </StackLayout>
+
+
+
+
+
+
+
+    </Grid>
+
+</ContentView>
