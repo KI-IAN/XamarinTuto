@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace DataBindingDemo.Model
 {
-    public class StudentListViewModel
+    public class StudentListViewModel : INotifyPropertyChanged
     {
 
         #region Fields
 
         ObservableCollection<Model.StudentViewModel> _studentList;
+
+        bool _isListViewRefreshing = false;
+
+
+        #endregion
+
+
+        #region Events
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -28,7 +40,18 @@ namespace DataBindingDemo.Model
             set
             {
                 _studentList = value;
+                OnPropertyChanged();
 
+            }
+        }
+
+        public bool IsListViewRefreshing
+        {
+            get { return _isListViewRefreshing; }
+            set
+            {
+                _isListViewRefreshing = value;
+                OnPropertyChanged();
             }
         }
 
@@ -38,6 +61,8 @@ namespace DataBindingDemo.Model
         public Command HitLikeCommand { get; }
 
         public Command HitDislikeCommand { get; }
+
+        public Command ListViewRefreshCommand { get; }
 
         #endregion
 
@@ -63,6 +88,8 @@ namespace DataBindingDemo.Model
             HitLikeCommand = new Command(async (object boundData) => await HitLike(boundData));
 
             HitDislikeCommand = new Command(async (object boundData) => await HitDislike(boundData));
+
+            ListViewRefreshCommand = new Command(RefreshListViewSource);
 
             #endregion
         }
@@ -122,8 +149,26 @@ namespace DataBindingDemo.Model
         }
 
 
+        public void RefreshListViewSource()
+        {
+            this.StudentList = new ObservableCollection<StudentViewModel>(GetAllStudent());     //Reloading new data set; mimic refresh in listview
+            this.IsListViewRefreshing = false;
+        }
+
+
         #endregion
 
+
+
+        #region Event Handler Functions
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
+        #endregion
 
 
 
@@ -134,7 +179,7 @@ namespace DataBindingDemo.Model
 
             List<StudentViewModel> studentData = new List<StudentViewModel>();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < new Random().Next(3, 15); i++)
             {
                 studentData.Add(new Model.StudentViewModel()
                 {

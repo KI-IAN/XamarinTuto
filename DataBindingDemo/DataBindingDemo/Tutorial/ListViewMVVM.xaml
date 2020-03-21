@@ -23,11 +23,13 @@
         SeparatorVisibility="None"
         SeparatorColor="Transparent"
         ItemsSource="{Binding StudentList}"
-        
+        IsPullToRefreshEnabled="True"
+        RefreshCommand="{Binding ListViewRefreshCommand}"
+        IsRefreshing="{Binding IsListViewRefreshing}"
         >
 
-        
-        
+
+
         <ListView.ItemTemplate>
             <DataTemplate
                 >
@@ -91,19 +93,35 @@
 
 
 
-                            <StackLayout
-                                Orientation="Horizontal"
+
+                            <Grid
                                 Grid.Row="2"
                                 Grid.Column="0"
-                                Grid.ColumnSpan="2">
+                                Grid.ColumnSpan="2"
+                                >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"  />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
 
 
 
 
                                 <StackLayout
                                     Orientation="Horizontal"
-                                    HorizontalOptions="StartAndExpand"
-                                    VerticalOptions="Center">
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="5,0,0,0"
+                                    >
 
 
                                     <Label 
@@ -128,10 +146,12 @@
                                 </StackLayout>
 
 
-                                <ImageButton 
+                                <ImageButton
+                                Grid.Row="0"
+                                Grid.Column="1"
                                 Margin="0,0,0,0"
                                 Source="delete.png"
-                                HorizontalOptions="CenterAndExpand"
+                                HorizontalOptions="Center"
                                 WidthRequest="24"
                                 HeightRequest="24"
                                 VerticalOptions="Center"
@@ -142,7 +162,10 @@
 
                                 <StackLayout
                                     Orientation="Horizontal"
-                                    HorizontalOptions="EndAndExpand">
+                                    HorizontalOptions="End"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Margin="0,0,20,0">
 
 
                                     <Label 
@@ -156,7 +179,7 @@
 
 
                                     <ImageButton 
-                                Margin="0,0,20,0"
+                           
                                 Source="thumbs_down.png"
                                 HorizontalOptions="End"
                                 WidthRequest="24"
@@ -168,10 +191,9 @@
 
                                 </StackLayout>
 
-                            </StackLayout>
 
-
-
+                            </Grid>
+                            
 
                         </Grid>
 
