@@ -10,7 +10,8 @@
 
 
 
-    <ScrollView>
+    <ScrollView
+        >
 
 
         <StackLayout
@@ -30,6 +31,11 @@
                 Margin="0"
                 Opacity="0.3"
                 />
+
+            <contentViews:WhatsNewCV
+                Padding="15"
+                ></contentViews:WhatsNewCV>
+
 
 
         </StackLayout>

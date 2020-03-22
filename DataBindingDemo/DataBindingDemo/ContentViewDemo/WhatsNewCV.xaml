@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="clr-namespace:DataBindingDemo.Model"
+             mc:Ignorable="d"
+             x:Class="DataBindingDemo.ContentViewDemo.WhatsNewCV">
+
+    <ContentView.BindingContext>
+        <model:ListWhatsNewViewModel></model:ListWhatsNewViewModel>
+    </ContentView.BindingContext>
+    
+    
+    
+    <CarouselView
+            x:DataType="model:ListWhatsNewViewModel"
+            ItemsSource="{Binding WhatsNewItemList}"
+            HeightRequest="500"
+            HorizontalScrollBarVisibility="Always"
+        >
+
+
+
+        <CarouselView.ItemTemplate
+            >
+
+            <DataTemplate
+                    x:DataType="model:WhatsNewViewModel">
+
+
+                <Frame
+                        CornerRadius="0"
+                        x:Name="frmNewTopic"
+                        BackgroundColor="White"
+                    >
+
+                    <Grid>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <Image 
+                                Source="{Binding ImageURL}"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                WidthRequest="400"
+                                HeightRequest="255"
+                                Aspect="Fill"
+                                />
+
+
+                        <Label 
+                                Text="{Binding Title}"
+                                FontSize="Title"
+                                TextColor="Black"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                />
+
+                        <Label 
+                                Text="{Binding Description}"
+                                FontSize="Default"
+                                TextColor="Black"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                />
+
+                        <Label 
+                                Text="{Binding ExpiryInfo}"
+                                FontSize="Small"
+                                TextColor="Gray"
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                HorizontalOptions="Start"
+                                VerticalOptions="Center"
+                                />
+
+
+                        <Button 
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Text="{Binding LinkDescription}"
+                                TextColor="Orange"
+                                BackgroundColor="{Binding Source={x:Reference frmNewTopic}, Path=BackgroundColor}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                />
+
+
+
+                    </Grid>
+
+
+
+                </Frame>
+
+
+
+            </DataTemplate>
+
+        </CarouselView.ItemTemplate>
+
+
+    </CarouselView>
+
+    
+    
+</ContentView>
