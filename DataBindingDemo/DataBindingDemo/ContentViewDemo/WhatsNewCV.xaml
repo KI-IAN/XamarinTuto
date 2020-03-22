@@ -13,14 +13,21 @@
 
 
 
-    <StackLayout>
+    <StackLayout
+        Spacing="0"
+        BackgroundColor="White"
+        >
 
+        
+        
         <CarouselView
             x:DataType="model:ListWhatsNewViewModel"
             ItemsSource="{Binding WhatsNewItemList}"
-            HeightRequest="500"
-            HorizontalScrollBarVisibility="Always"
-           
+            HeightRequest="460"
+            HorizontalScrollBarVisibility="Default"
+            IndicatorView="indicatorView"
+            IsSwipeEnabled="True"
+            IsBounceEnabled="True"
         >
 
             <CarouselView.ItemTemplate
@@ -123,6 +130,10 @@
 
         </CarouselView>
 
+        <IndicatorView x:Name="indicatorView"
+                   IndicatorColor="Gray"
+                   SelectedIndicatorColor="LightSeaGreen"
+                   HorizontalOptions="Center" />
 
 
     </StackLayout>

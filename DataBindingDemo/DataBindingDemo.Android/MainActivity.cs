@@ -22,6 +22,7 @@ namespace DataBindingDemo.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+            Forms.SetFlags("IndicatorView_Experimental");
             Forms.SetFlags("CarouselView_Experimental");
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

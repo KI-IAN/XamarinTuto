@@ -16,7 +16,8 @@
 
         <StackLayout
         Orientation="Vertical"
-        Spacing="0">
+        Spacing="0"
+        >
 
 
             <contentViews:WelcomeBannerCV></contentViews:WelcomeBannerCV>
@@ -33,7 +34,7 @@
                 />
 
             <contentViews:WhatsNewCV
-                Padding="15"
+                Padding="0"
                 ></contentViews:WhatsNewCV>
 
 
