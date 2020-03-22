@@ -18,8 +18,13 @@
         BackgroundColor="White"
         >
 
-        
-        
+        <Label 
+            Text="What's new"
+            FontSize="Medium"
+            Padding="15,10,0,0"
+            FontAttributes="Bold"
+            />
+
         <CarouselView
             x:DataType="model:ListWhatsNewViewModel"
             ItemsSource="{Binding WhatsNewItemList}"
