@@ -137,8 +137,11 @@
 
         <IndicatorView x:Name="indicatorView"
                    IndicatorColor="Gray"
-                   SelectedIndicatorColor="LightSeaGreen"
-                   HorizontalOptions="Center" />
+                   SelectedIndicatorColor="Orange"
+                   HorizontalOptions="Center"
+                   IndicatorsShape="Circle"
+                   IndicatorSize="7"
+                       />
 
 
     </StackLayout>
