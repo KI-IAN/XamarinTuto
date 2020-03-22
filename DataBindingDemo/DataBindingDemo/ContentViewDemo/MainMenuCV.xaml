@@ -14,7 +14,8 @@
         >
 
         <Grid
-            RowSpacing="0">
+            RowSpacing="0"
+            >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />

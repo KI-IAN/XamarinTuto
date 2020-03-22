@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:contentViews="clr-namespace:DataBindingDemo.ContentViewDemo"
              mc:Ignorable="d"
-             x:Class="DataBindingDemo.Pages.MultipleContentViewDemo">
+             x:Class="DataBindingDemo.Pages.MultipleContentViewDemo"
+             >
 
 
 

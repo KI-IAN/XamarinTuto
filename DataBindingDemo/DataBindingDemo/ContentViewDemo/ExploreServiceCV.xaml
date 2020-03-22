@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DataBindingDemo.ContentViewDemo.ExploreServiceCV">
+             x:Class="DataBindingDemo.ContentViewDemo.ExploreServiceCV"
+             >
 
 
     <Frame
@@ -35,7 +36,7 @@
             Grid.ColumnSpan="4"
             FontSize="18"
             FontAttributes="Bold"
-                TextColor="Black"
+            TextColor="Black"
             />
 
 

@@ -8,6 +8,36 @@
              x:Class="DataBindingDemo.App">
     <Application.Resources>
 
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="RegularFont" >
+                <On Platform="Android" Value="Bellota-Regular.ttf#Bellota-Regular" />
+            </OnPlatform>
+
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAbel">
+                <On Platform="Android" Value="Abel-Regular.ttf#Abel-Regular" />
+            </OnPlatform>
+
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontRajdhani">
+                <On Platform="Android" Value="Rajdhani-Regular.ttf#Rajdhani-Regular"/>
+            </OnPlatform>
+            
+        </ResourceDictionary>
+
+
+        <!--<Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource FontAbel}"></Setter>
+        </Style>-->
+
+
+        <!--<Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource RegularFont}"></Setter>
+        </Style>-->
+
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{StaticResource FontRajdhani}"></Setter>
+        </Style>
 
         <converter:CurrencyConverter x:Key="LocalCurrencyConverter"/>
 

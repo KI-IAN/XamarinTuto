@@ -70,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Bellota-Regular.ttf" />
+    <AndroidAsset Include="Assets\Abel-Regular.ttf" />
+    <AndroidAsset Include="Assets\Rajdhani-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
