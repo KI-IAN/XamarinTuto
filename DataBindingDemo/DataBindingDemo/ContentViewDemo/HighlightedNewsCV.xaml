@@ -23,64 +23,63 @@
                Padding="15,15,0,0"/>
 
 
-        <CollectionView
+            <CollectionView
             x:DataType="models:ListWhatsNewViewModel"
             ItemsSource="{Binding WhatsNewItemList}"
             SelectionMode="Multiple"
             ItemSizingStrategy="MeasureAllItems"
             >
 
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
                     Orientation="Vertical"
                     Span="2"
                     HorizontalItemSpacing="5"
                     VerticalItemSpacing="10"
                     >
-                    
-                </GridItemsLayout>
-            </CollectionView.ItemsLayout>
-            
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate
+
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
+
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate
                     x:DataType="models:WhatsNewViewModel">
 
 
-                    <Frame
+                        <Frame
                         CornerRadius="0"
                         BackgroundColor="#ffefe6"
                         >
 
 
-                        <Grid>
+                            <Grid>
 
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
 
-                            </Grid.RowDefinitions>
+                                </Grid.RowDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
 
-                            <Image 
+                                <Image 
                                 Source="{Binding ImageURL}"
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                WidthRequest="150"
-                                HeightRequest="85"
-                                Aspect="Fill"
+
+                                Aspect="AspectFit"
                                 />
 
 
-                            <Label 
+                                <Label 
                                 Text="{Binding Title}"
                                 FontSize="Title"
                                 TextColor="Black"
@@ -90,7 +89,7 @@
                                 VerticalOptions="Center"
                                 />
 
-                            <Label 
+                                <Label 
                                 Text="{Binding Description}"
                                 FontSize="Default"
                                 TextColor="Black"
@@ -100,7 +99,7 @@
                                 VerticalOptions="Center"
                                 />
 
-                            <Label 
+                                <Label 
                                 Text="{Binding ExpiryInfo}"
                                 FontSize="Small"
                                 TextColor="Gray"
@@ -113,35 +112,20 @@
 
 
 
-                        </Grid>
+                            </Grid>
 
-                    </Frame>
-                    
+                        </Frame>
 
-                    
-                    
-                    
-                    
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-            
-            
-            
-        </CollectionView>
-        
-        
-        
 
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+
+            </CollectionView>
 
 
     </StackLayout>
-    
-    
-    
-    
-    
-    
-    
     
     
 </ContentView>
