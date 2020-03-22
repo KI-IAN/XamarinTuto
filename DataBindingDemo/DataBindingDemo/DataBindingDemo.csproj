@@ -26,6 +26,9 @@
     <EmbeddedResource Update="ContentViewDemo\ExploreServiceCV.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="ContentViewDemo\HighlightedNewsCV.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ContentViewDemo\MainMenuCV.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

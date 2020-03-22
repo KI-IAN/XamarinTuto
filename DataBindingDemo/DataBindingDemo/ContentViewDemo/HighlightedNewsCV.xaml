@@ -3,56 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:model="clr-namespace:DataBindingDemo.Model"
+             xmlns:models="clr-namespace:DataBindingDemo.Model"
              mc:Ignorable="d"
-             x:Class="DataBindingDemo.ContentViewDemo.WhatsNewCV">
+             x:Class="DataBindingDemo.ContentViewDemo.HighlightedNewsCV">
+
 
     <ContentView.BindingContext>
-        <model:ListWhatsNewViewModel></model:ListWhatsNewViewModel>
+        <models:ListWhatsNewViewModel ></models:ListWhatsNewViewModel>
     </ContentView.BindingContext>
 
 
-
     <StackLayout
-        Spacing="0"
-        BackgroundColor="White"
-        Padding="0,0,0,15"
-        >
+        BackgroundColor="White">
 
-        <Label 
-            Text="What's new"
-            FontSize="Medium"
-            Padding="15,10,0,0"
-            FontAttributes="Bold"
-            TextColor="Black"
-            />
 
-        <CarouselView
-            x:DataType="model:ListWhatsNewViewModel"
+        <Label Text="Highlights"
+               FontSize="Title"
+               TextColor="Black"
+               Padding="15,15,0,0"/>
+
+
+        <CollectionView
+            x:DataType="models:ListWhatsNewViewModel"
             ItemsSource="{Binding WhatsNewItemList}"
-            HeightRequest="460"
-            HorizontalScrollBarVisibility="Default"
-            IndicatorView="indicatorView"
-            IsSwipeEnabled="True"
-            IsBounceEnabled="True"
-        >
-
-            <CarouselView.ItemTemplate
+            SelectionMode="Multiple"
+            ItemSizingStrategy="MeasureAllItems"
             >
 
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="2"
+                    HorizontalItemSpacing="5"
+                    VerticalItemSpacing="10"
+                    >
+                    
+                </GridItemsLayout>
+            </CollectionView.ItemsLayout>
+            
+            
+            <CollectionView.ItemTemplate>
                 <DataTemplate
-                    x:DataType="model:WhatsNewViewModel"
-                >
+                    x:DataType="models:WhatsNewViewModel">
 
 
                     <Frame
                         CornerRadius="0"
-                        x:Name="frmNewTopic"
-                        BackgroundColor="White"
-                    >
-
-                        <Grid
+                        BackgroundColor="#ffefe6"
                         >
+
+
+                        <Grid>
+
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -64,17 +66,16 @@
                             </Grid.RowDefinitions>
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-
 
 
                             <Image 
                                 Source="{Binding ImageURL}"
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                WidthRequest="400"
-                                HeightRequest="255"
+                                WidthRequest="150"
+                                HeightRequest="85"
                                 Aspect="Fill"
                                 />
 
@@ -110,48 +111,37 @@
                                 />
 
 
-                            <Button 
-                                Grid.Row="4"
-                                Grid.Column="0"
-                                Text="{Binding LinkDescription}"
-                                TextColor="Orange"
-                                BackgroundColor="{Binding Source={x:Reference frmNewTopic}, Path=BackgroundColor}"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"
-                                />
-
 
 
                         </Grid>
 
-
-
                     </Frame>
+                    
 
-
-
+                    
+                    
+                    
+                    
                 </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+            
+            
+        </CollectionView>
+        
+        
+        
 
-            </CarouselView.ItemTemplate>
-
-
-        </CarouselView>
-
-        <IndicatorView x:Name="indicatorView"
-                   IndicatorColor="Gray"
-                   SelectedIndicatorColor="Orange"
-                   HorizontalOptions="Center"
-                   IndicatorsShape="Circle"
-                   IndicatorSize="7"
-                       />
 
 
     </StackLayout>
     
     
     
-
-
+    
+    
+    
+    
     
     
 </ContentView>

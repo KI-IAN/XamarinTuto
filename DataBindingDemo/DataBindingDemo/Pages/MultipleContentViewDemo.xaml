@@ -10,8 +10,7 @@
 
 
 
-    <ScrollView
-        >
+    <ScrollView>
 
 
         <StackLayout
@@ -34,9 +33,20 @@
                 />
 
             <contentViews:WhatsNewCV
-                Padding="0"
-                ></contentViews:WhatsNewCV>
+                Padding="0">
+                
+            </contentViews:WhatsNewCV>
 
+
+            <BoxView 
+                HeightRequest="12"
+                BackgroundColor="LightGray"
+                Margin="0"
+                Opacity="0.3"
+                />
+
+            <contentViews:HighlightedNewsCV></contentViews:HighlightedNewsCV>
+            
 
 
         </StackLayout>
