@@ -12,7 +12,7 @@ namespace DataBindingDemo
             InitializeComponent();
 
             //Test Changes
-            MainPage = new Pages.MultipleContentViewDemo();
+            MainPage = new Tutorial.ListViewCRUDFunction();
 
         }
 

@@ -13,13 +13,14 @@ namespace DataBindingDemo.Tutorial
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListViewCRUDFunction : ContentPage
     {
+        public bool IsListRefrshing = false;
 
         ObservableCollection<Model.Student> studentData = new ObservableCollection<Model.Student>();
 
         public ListViewCRUDFunction()
         {
             InitializeComponent();                      //Initialize all the components of the page
-                
+
             GetStudents();                              //Call the function to generate some dummy data
 
             lvStudent.ItemsSource = studentData;        //Initialize Listview item source
@@ -80,6 +81,39 @@ namespace DataBindingDemo.Tutorial
             //}
 
             #endregion
+
+        }
+
+        private async void lvStudent_Refreshing(object sender, EventArgs e)
+        {
+            //Asking Reload Icon to show up and keep spinning until reloading is finished.
+            lvStudent.IsRefreshing = true;
+
+            var totalData = new Random().Next(7, 50);
+
+            //Reinitializing student observable collection; so that we can load it with new data.
+            studentData = new ObservableCollection<Model.Student>();
+
+            for (int i = 0; i <= totalData; i++)
+            {
+                studentData.Add(new Model.Student()
+                {
+                    StudentId = i,
+                    FirstName = $"First Name#{i}",
+                    LastName = $"Last Name#{i}",
+                    Age = i + 23,
+                    PhoneNo = $"01{i}{new Random().Next(100000, 999999)}",  //Generate random phone number 
+                });
+
+            }
+
+
+            await Task.Delay(1 * 2000);       //fore the function to wait here for 2 seconds to mimic reloading data from web api 
+
+            lvStudent.ItemsSource = studentData;    //updating listview items/ source
+
+            //Informing Listview that reload is completed and reload icon can be hidden now.
+            lvStudent.IsRefreshing = false;
 
         }
     }

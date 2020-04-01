@@ -18,6 +18,8 @@ namespace DataBindingDemo.Model
 
         public int Age { get; set; }
 
+   
+
 
     }
 }

@@ -1,24 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:model="clr-namespace:DataBindingDemo.Model"
-             mc:Ignorable="d"
-             x:Class="DataBindingDemo.Tutorial.ListViewCRUDFunction"
-             BackgroundColor="CadetBlue">
+<ContentPage
+    x:Class="DataBindingDemo.Tutorial.ListViewCRUDFunction"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:DataBindingDemo.Model"
+    BackgroundColor="CadetBlue"
+    mc:Ignorable="d">
 
 
 
 
     <ListView
-        Margin="10"
-        HasUnevenRows="True"
-        x:DataType="model:Student"
         x:Name="lvStudent"
-        SeparatorVisibility="None"
+        Margin="10"
+        x:DataType="model:Student"
+        HasUnevenRows="True"
+        IsPullToRefreshEnabled="True"
+        IsRefreshing="False"
+        Refreshing="lvStudent_Refreshing"
         SeparatorColor="Transparent"
-        >
+        SeparatorVisibility="None">
 
         <!--<ListView.BindingContext>
             <model:Student></model:Student>
@@ -31,18 +34,17 @@
                 <ViewCell>
 
                     <Frame
-                       Padding="10"
-                        BackgroundColor="White"
                         Margin="10"
-                        CornerRadius="5"
-                        >
+                        Padding="10"
+                        BackgroundColor="White"
+                        CornerRadius="5">
 
                         <Grid>
 
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
 
                             </Grid.RowDefinitions>
 
@@ -54,135 +56,125 @@
 
 
 
-                            <Label 
+                            <Label
                                 Grid.Row="0"
                                 Grid.Column="0"
-                                Text="{Binding FirstName}"
                                 FontSize="Medium"
-                                
-                                />
+                                Text="{Binding FirstName}" />
 
-                            <Label 
+                            <Label
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                Text="{Binding LastName}"
                                 FontSize="Medium"
-                                />
+                                Text="{Binding LastName}" />
 
 
-                            <Label 
+                            <Label
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Text="{Binding Age}"
                                 FontSize="Small"
-                                
-                                />
+                                Text="{Binding Age}" />
 
 
-                            <Label 
+                            <Label
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Text="{Binding PhoneNo}"
-                                />
+                                Text="{Binding PhoneNo}" />
 
 
 
                             <StackLayout
-                                Orientation="Horizontal"
                                 Grid.Row="2"
                                 Grid.Column="0"
-                                Grid.ColumnSpan="2">
+                                Grid.ColumnSpan="2"
+                                Orientation="Horizontal">
 
 
 
 
                                 <StackLayout
-                                    Orientation="Horizontal"
                                     HorizontalOptions="StartAndExpand"
+                                    Orientation="Horizontal"
                                     VerticalOptions="Center">
 
 
-                                <Label 
-                                    Text="0"
-                                    FontSize="24"    
-                                    FontAttributes="Bold"
-                                    TextColor="CornflowerBlue"
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="24"
+                                        HorizontalOptions="End"
+                                        Text="0"
+                                        TextColor="CornflowerBlue"
+                                        VerticalOptions="Center" />
 
-                                    HorizontalOptions="End"
-                                    VerticalOptions="Center"
-                                />
-
-                                    <ImageButton 
-                                Source="thumbs_up.png"
-                                HorizontalOptions="StartAndExpand"
-                                WidthRequest="24"
-                                HeightRequest="24"
-                                VerticalOptions="Center"
-                                />
+                                    <ImageButton
+                                        Aspect="Fill"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="24"
+                                        HorizontalOptions="StartAndExpand"
+                                        Source="thumbs_up.png"
+                                        VerticalOptions="Center"
+                                        WidthRequest="24" />
 
                                 </StackLayout>
 
 
-                                <ImageButton 
-                                Margin="0,0,0,0"
-                                Source="delete.png"
-                                Clicked="DeleteItem"
-                                HorizontalOptions="CenterAndExpand"
-                                WidthRequest="24"
-                                HeightRequest="24"
-                                VerticalOptions="Center"
-                                
-                                />
-
-
-                                <StackLayout
-                                    Orientation="Horizontal"
-                                    HorizontalOptions="EndAndExpand">
-
-
-                                    <Label 
-                                    Text="0"
-                                    FontSize="24"    
-                                    FontAttributes="Bold"
-                                    TextColor="OrangeRed"
-
-                                    HorizontalOptions="End"
+                                <ImageButton
+                                    Margin="0,0,0,0"
+                                    Aspect="Fill"
+                                    BackgroundColor="Transparent"
+                                    Clicked="DeleteItem"
+                                    HeightRequest="24"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Source="delete.png"
                                     VerticalOptions="Center"
-                                    />
+                                    WidthRequest="24" />
 
 
-                                    <ImageButton 
-                                Margin="0,0,20,0"
-                                Source="thumbs_down.png"
-                                HorizontalOptions="End"
-                                WidthRequest="24"
-                                HeightRequest="24"
-                                VerticalOptions="EndAndExpand"
-                                />
+                                <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+
+
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="24"
+                                        HorizontalOptions="End"
+                                        Text="0"
+                                        TextColor="OrangeRed"
+                                        VerticalOptions="Center" />
+
+
+                                    <ImageButton
+                                        Margin="0,0,20,0"
+                                        Aspect="Fill"
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="24"
+                                        HorizontalOptions="End"
+                                        Source="thumbs_down.png"
+                                        VerticalOptions="EndAndExpand"
+                                        WidthRequest="24" />
 
                                 </StackLayout>
 
                             </StackLayout>
-                            
+
 
 
 
                         </Grid>
-                        
-                        
-                        
+
+
+
                     </Frame>
-                    
-                    
+
+
                 </ViewCell>
 
             </DataTemplate>
         </ListView.ItemTemplate>
-        
+
     </ListView>
-    
-    
-    
-    
-    
+
+
+
+
+
 </ContentPage>
