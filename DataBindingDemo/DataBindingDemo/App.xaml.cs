@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBindingDemo.MDP;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +13,8 @@ namespace DataBindingDemo
             InitializeComponent();
 
             //Test Changes
-            MainPage = new Tutorial.PersonViewPage();
+            //MainPage = new Tutorial.PersonViewPage();
+            MainPage = new MasterDetailPageView();
 
         }
 
