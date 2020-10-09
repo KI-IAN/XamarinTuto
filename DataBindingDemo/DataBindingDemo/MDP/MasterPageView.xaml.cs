@@ -1,4 +1,5 @@
 ﻿using DataBindingDemo.MDP.Model;
+using DataBindingDemo.MultiMenu.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace DataBindingDemo.MDP
     public partial class MasterPageView : ContentPage
     {
         private List<NavigationMenuItem> menuItems;
+
+        private List<MenusVM> multiMenus;
 
         public MasterPageView()
         {
