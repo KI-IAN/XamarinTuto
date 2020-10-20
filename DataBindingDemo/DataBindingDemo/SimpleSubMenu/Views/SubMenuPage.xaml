@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DataBindingDemo.SimpleSubMenu.Views.SubMenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:DataBindingDemo.SimpleSubMenu.ViewModels"
+    mc:Ignorable="d">
+
+
+    <ContentPage.BindingContext>
+        <viewModel:SubMenuViewModel />
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+
+        <ListView
+            GroupDisplayBinding="{Binding LongName}"
+            IsGroupingEnabled="True"
+            ItemsSource="{Binding GroupedMenuItems}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20,0,0,0">
+                            <Label FontSize="Default" Text="{Binding Title}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="5" Orientation="Horizontal">
+                            <Label FontSize="Medium" Text="{Binding LongName}" />
+                            <Image
+                                HeightRequest="20"
+                                HorizontalOptions="End"
+                                Source="{Binding StateIcon}"
+                                WidthRequest="20" />
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+
+        </ListView>
+
+
+    </StackLayout>
+
+
+
+</ContentPage>

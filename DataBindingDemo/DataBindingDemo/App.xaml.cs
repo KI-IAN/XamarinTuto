@@ -16,7 +16,8 @@ namespace DataBindingDemo
             //Test Changes
             //MainPage = new Tutorial.PersonViewPage();
             //MainPage = new MasterDetailPageView();
-            MainPage = new SampleChart();
+            //MainPage = new SampleChart();
+            MainPage = new SimpleSubMenu.Views.SubMenuPage();
 
         }
 
