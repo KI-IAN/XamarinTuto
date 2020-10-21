@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="clr-namespace:DataBindingDemo.SimpleSubMenu.ViewModels"
+    x:Name="subMenuPage"
     mc:Ignorable="d">
 
 
@@ -41,6 +42,14 @@
                                 HorizontalOptions="End"
                                 Source="{Binding StateIcon}"
                                 WidthRequest="20" />
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={x:Reference subMenuPage}, Path=BindingContext.TapMenu}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
 
                         </StackLayout>
                     </ViewCell>
