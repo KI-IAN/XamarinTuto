@@ -46,6 +46,9 @@ namespace DataBindingDemo.SimpleSubMenu.ViewModels
         {
             SetMenuItems();
 
+            // Remove sub menus from menu list during first load
+            // Call the menu to clear submenus from list
+
             TapMenu = new Command<GroupedMenuItem>((data) => TapMenuHandler(data));
 
         }
@@ -99,9 +102,9 @@ namespace DataBindingDemo.SimpleSubMenu.ViewModels
 
         private void SetMenuItems()
         {
-            var mainMenu_1 = new GroupedMenuItem() { LongName = "Main Menu#1", StateIcon = "arrow_down.png" };
-            var mainMenu_2 = new GroupedMenuItem() { LongName = "Main Menu#2", StateIcon = "arrow_down.png" };
-            var mainMenu_3 = new GroupedMenuItem() { LongName = "Main Menu#3", StateIcon = "arrow_down.png" };
+            var mainMenu_1 = new GroupedMenuItem() { LongName = "Main Menu#1", StateIcon = "arrow_up.png" };
+            var mainMenu_2 = new GroupedMenuItem() { LongName = "Main Menu#2", StateIcon = "arrow_up.png" };
+            var mainMenu_3 = new GroupedMenuItem() { LongName = "Main Menu#3", StateIcon = "arrow_up.png" };
 
             // Sub Menu
             var sub_mm_1_1 = new NavigationMenuItem() { Title = "SM 1.1", PageType = typeof(MDP.ContactDetailPageView) };

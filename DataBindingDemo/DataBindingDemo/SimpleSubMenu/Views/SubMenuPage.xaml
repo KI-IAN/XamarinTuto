@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="clr-namespace:DataBindingDemo.SimpleSubMenu.ViewModels"
     x:Name="subMenuPage"
+    Title=" "
     mc:Ignorable="d">
 
 
@@ -18,6 +19,8 @@
     <StackLayout>
 
         <ListView
+            x:Name="menuItemlv"
+            x:FieldModifier="Public"
             GroupDisplayBinding="{Binding LongName}"
             IsGroupingEnabled="True"
             ItemsSource="{Binding GroupedMenuItems}">
@@ -36,7 +39,10 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="5" Orientation="Horizontal">
-                            <Label FontSize="Medium" Text="{Binding LongName}" />
+                            <Label
+                                FontSize="Medium"
+                                Text="{Binding LongName}"
+                                TextColor="Blue" />
                             <Image
                                 HeightRequest="20"
                                 HorizontalOptions="End"
