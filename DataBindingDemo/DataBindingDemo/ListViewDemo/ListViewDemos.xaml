@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DataBindingDemo.ListViewDemo.ListViewDemos"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:lvVM="clr-namespace:DataBindingDemo.ListViewDemo.Model"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <ContentPage.BindingContext>
+        <lvVM:LVViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ListView ItemsSource="{Binding StudentList}">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <StackLayout Orientation="Vertical">
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Student ID" />
+                            <Label FontSize="Large" Text="{Binding StudentID}" />
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Large" Text="First Name" />
+                            <Label FontSize="Large" Text="{Binding FirstName}" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Last Name" />
+                            <Label FontSize="Large" Text="{Binding LastName}" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Large" Text="Gender" />
+                            <Label FontSize="Large" Text="{Binding Gender}" />
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+
+    </ListView>
+
+
+
+</ContentPage>
