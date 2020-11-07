@@ -18,7 +18,8 @@ namespace DataBindingDemo
             //MainPage = new MasterDetailPageView();
             //MainPage = new SampleChart();
             //MainPage = new SimpleSubMenu.Views.SubMenuPage();
-            MainPage = new ListViewDemo.ListViewDemos();
+            //MainPage = new ListViewDemo.ListViewDemos();
+            MainPage = new ContentViewDemoNew.CVPageDemo();
         }
 
         protected override void OnStart()

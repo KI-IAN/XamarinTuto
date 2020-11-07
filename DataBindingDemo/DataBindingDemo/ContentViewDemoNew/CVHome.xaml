@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DataBindingDemo.ContentViewDemoNew.CVHome"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Frame>
+
+        <Grid RowSpacing="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Explore our services"
+                TextColor="Black" />
+
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0"
+                Orientation="Vertical"
+                Spacing="0">
+
+                <ImageButton
+                    Aspect="Fill"
+                    BackgroundColor="Transparent"
+                    HeightRequest="48"
+                    HorizontalOptions="Center"
+                    Source="home_services.png"
+                    VerticalOptions="Center"
+                    WidthRequest="48" />
+
+
+                <Label
+                    Padding="-35,0,0,0"
+                    HorizontalOptions="Center"
+                    Text="Home"
+                    VerticalOptions="Center" />
+
+
+            </StackLayout>
+
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0"
+                Orientation="Vertical"
+                Spacing="0">
+
+                <ImageButton
+                    Aspect="Fill"
+                    BackgroundColor="Transparent"
+                    HeightRequest="48"
+                    HorizontalOptions="Center"
+                    Source="mobile_postpaid_services.png"
+                    VerticalOptions="Center"
+                    WidthRequest="48" />
+
+
+                <Label
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Mobile Postpaid"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="0"
+                Orientation="Vertical"
+                Spacing="0">
+
+                <ImageButton
+                    Aspect="Fill"
+                    BackgroundColor="Transparent"
+                    HeightRequest="48"
+                    HorizontalOptions="Center"
+                    Source="unifi_air_service.png"
+                    VerticalOptions="Center"
+                    WidthRequest="48" />
+
+
+                <Label
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="unifi Air"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
+
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="0"
+                Orientation="Vertical"
+                Spacing="0">
+
+                <ImageButton
+                    Aspect="Fill"
+                    BackgroundColor="Transparent"
+                    HeightRequest="48"
+                    HorizontalOptions="Center"
+                    Source="unifi_tv_service.png"
+                    VerticalOptions="Center"
+                    WidthRequest="48" />
+
+
+                <Label
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="TV"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
+
+
+            </StackLayout>
+
+
+        </Grid>
+
+
+    </Frame>
+</ContentView>
