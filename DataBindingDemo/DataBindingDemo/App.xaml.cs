@@ -15,11 +15,11 @@ namespace DataBindingDemo
 
             //Test Changes
             //MainPage = new Tutorial.PersonViewPage();
-            //MainPage = new MasterDetailPageView();
+            MainPage = new MasterDetailPageView();
             //MainPage = new SampleChart();
             //MainPage = new SimpleSubMenu.Views.SubMenuPage();
             //MainPage = new ListViewDemo.ListViewDemos();
-            MainPage = new ContentViewDemoNew.CVPageDemo();
+            //MainPage = new ContentViewDemoNew.CVPageDemo();
         }
 
         protected override void OnStart()

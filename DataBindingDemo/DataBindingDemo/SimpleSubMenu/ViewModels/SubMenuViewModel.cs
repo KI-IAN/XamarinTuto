@@ -71,7 +71,7 @@ namespace DataBindingDemo.SimpleSubMenu.ViewModels
 
                 var unSelectedMenu = _groupedMenuItems.Where(r => !r.LongName.Equals(menu.LongName, StringComparison.OrdinalIgnoreCase));
 
-
+                
                 foreach (var closedMenu in unSelectedMenu)
                 {
                     closedMenu.StateIcon = "arrow_up.png";

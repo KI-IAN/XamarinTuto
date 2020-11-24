@@ -121,4 +121,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="APIServices\Helper\" />
+    <Folder Include="APIServices\Models\" />
+    <Folder Include="APIServices\Pages\" />
+  </ItemGroup>
 </Project>
